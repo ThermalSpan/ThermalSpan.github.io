@@ -34,7 +34,7 @@
 &lt;li&gt;Introduce some notation and explain its tradeoffs. Like bra-ket, or Einstein summation.&lt;/li&gt;
 &lt;li&gt;A post talking about implementing prolog would be cool&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;some-cheatshet-ideas&quot;&gt;Some Cheatshet ideas&lt;/h2&gt;
+&lt;h2 id=&quot;some-cheatsheet-ideas&quot;&gt;Some Cheatsheet ideas&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Create Context Free Grammer cheatsheet&lt;/li&gt;
 &lt;li&gt;Create Integration methods cheatsheet&lt;/li&gt;
@@ -51,8 +51,8 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description><guid>thermalspan.github.io/posts/website_ideas.html</guid></item><item><title>Website Setup</title><link>thermalspan.github.io/posts/website_setup.html</link><description>&lt;h1 id=&quot;website-setup&quot;&gt;Website Setup&lt;/h1&gt;
-&lt;p&gt;This post documents how my website is setup. Since I deploy it via github pages, that really ammounts to how it is built.&lt;/p&gt;
-&lt;p&gt;The premise is that I have several component projects that all dump their build artifacts into a common root directory. I then run the a templater on that directory to produce the final website.&lt;/p&gt;
+&lt;p&gt;This post documents how my website is built and deployed. This document is a living document and will change as my process changes.&lt;/p&gt;
+&lt;p&gt;I have several component projects that all ditto their build artifacts into a common directory. I then run a static site generator on that directory to produce the final website.&lt;/p&gt;
 &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
 &lt;p&gt;You will need the following special tools in your &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;cobalt&quot;&gt;Cobalt&lt;/h3&gt;
@@ -78,13 +78,13 @@ cargo install&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;dependences&quot;&gt;Dependences&lt;/h2&gt;
 &lt;p&gt;These are are the projects that contribute content to the website.&lt;/p&gt;
 &lt;h3 id=&quot;katex&quot;&gt;KaTeX&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/Khan/KaTeX&quot;&gt;blockpass&lt;/a&gt; is a javascript library for math rendering. From Khan Academy! I am currently using the following tag:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Khan/KaTeX&quot;&gt;KaTeX&lt;/a&gt; is a javascript library for math rendering. From Khan Academy! I am currently using the following tag:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;v0.7.1&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Pandoc supports KaTeX in html, so that&apos;s how I use it.&lt;/p&gt;
 &lt;h3 id=&quot;pandoc-posts&quot;&gt;pandoc-posts&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/ThermalSpan/pandoc-posts&quot;&gt;pandoc-posts&lt;/a&gt; is the repository where most of the posts live. Top of tree on the master branch should be sufficient. Drafts live in other branches.&lt;/p&gt;
 &lt;h3 id=&quot;thermalspan.github.io-source&quot;&gt;thermalspan.github.io-source&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/ThermalSpan/thermalspan.github.io-source&quot;&gt;thermalspan.github.io-source&lt;/a&gt; is kitchen sink for this website. All the templates, misc pages, and such live here. And for now the &amp;quot;build system&amp;quot; does too, but I&apos;d like to rip that out.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ThermalSpan/thermalspan.github.io-source&quot;&gt;thermalspan.github.io-source&lt;/a&gt; is the kitchen sink for this website. All the templates, misc pages, and such live here. And for now the &amp;quot;build system&amp;quot; does too, but I&apos;d like to rip that out.&lt;/p&gt;
 &lt;h2 id=&quot;how-to-build-and-deploy&quot;&gt;How to Build and Deploy&lt;/h2&gt;
 &lt;p&gt;First checkout thermalspan.github.io-source, and we should be able to build from there. Note that the build script expects a checkout of &lt;a href=&quot;https://github.com/ThermalSpan/thermalspan.github.io&quot;&gt;thermalspan.github.io&lt;/a&gt; next to it. When the build script is passed &apos;deploy&apos; it will, among other things, set copy the result of the build over to the thermalspan.github.io directory. From there we commit everything and push it.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git clone https://github.com/ThermalSpan/thermalspan.github.io-source.git

@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width initial-scale=1">
         
-        <title>thermalspan</title>
+        <title>Website Setup</title>
         
         <meta name="description" content="">
         <link rel="stylesheet" href="https://thermalspan.github.io/css/style.css">
@@ -52,11 +51,9 @@
         <div id="content">
         
             <div>
-  <h2>thermalspan</h2>
-  <p>
     <h1 id="website-setup">Website Setup</h1>
-<p>This post documents how my website is setup. Since I deploy it via github pages, that really ammounts to how it is built.</p>
-<p>The premise is that I have several component projects that all dump their build artifacts into a common root directory. I then run the a templater on that directory to produce the final website.</p>
+<p>This post documents how my website is built and deployed. This document is a living document and will change as my process changes.</p>
+<p>I have several component projects that all ditto their build artifacts into a common directory. I then run a static site generator on that directory to produce the final website.</p>
 <h2 id="tools">Tools</h2>
 <p>You will need the following special tools in your <code>PATH</code>.</p>
 <h3 id="cobalt">Cobalt</h3>
@@ -82,13 +79,13 @@ cargo install</code></pre>
 <h2 id="dependences">Dependences</h2>
 <p>These are are the projects that contribute content to the website.</p>
 <h3 id="katex">KaTeX</h3>
-<p><a href="https://github.com/Khan/KaTeX">blockpass</a> is a javascript library for math rendering. From Khan Academy! I am currently using the following tag:</p>
+<p><a href="https://github.com/Khan/KaTeX">KaTeX</a> is a javascript library for math rendering. From Khan Academy! I am currently using the following tag:</p>
 <pre><code>v0.7.1</code></pre>
 <p>Pandoc supports KaTeX in html, so that's how I use it.</p>
 <h3 id="pandoc-posts">pandoc-posts</h3>
 <p><a href="https://github.com/ThermalSpan/pandoc-posts">pandoc-posts</a> is the repository where most of the posts live. Top of tree on the master branch should be sufficient. Drafts live in other branches.</p>
 <h3 id="thermalspan.github.io-source">thermalspan.github.io-source</h3>
-<p><a href="https://github.com/ThermalSpan/thermalspan.github.io-source">thermalspan.github.io-source</a> is kitchen sink for this website. All the templates, misc pages, and such live here. And for now the &quot;build system&quot; does too, but I'd like to rip that out.</p>
+<p><a href="https://github.com/ThermalSpan/thermalspan.github.io-source">thermalspan.github.io-source</a> is the kitchen sink for this website. All the templates, misc pages, and such live here. And for now the &quot;build system&quot; does too, but I'd like to rip that out.</p>
 <h2 id="how-to-build-and-deploy">How to Build and Deploy</h2>
 <p>First checkout thermalspan.github.io-source, and we should be able to build from there. Note that the build script expects a checkout of <a href="https://github.com/ThermalSpan/thermalspan.github.io">thermalspan.github.io</a> next to it. When the build script is passed 'deploy' it will, among other things, set copy the result of the build over to the thermalspan.github.io directory. From there we commit everything and push it.</p>
 <pre><code>git clone https://github.com/ThermalSpan/thermalspan.github.io-source.git
@@ -99,7 +96,6 @@ git add -A
 git commit -m &quot;Another day, Another deployment&quot;
 git push origin master</code></pre>
 
-  </p>
 </div>
 
         
